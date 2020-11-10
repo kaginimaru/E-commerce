@@ -32,6 +32,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(`${__dirname}/../frontend/build/index.html`));
 });
 
-app.listen(config.PORT, () => {
-  console.log('Servidor iniciado em http://localhost:5000');
-});
+const port = process.env.PORT || 5000;
+app.listen(port, () =>
+  console.log("Server serves at http://localhost:" + port)
+);
